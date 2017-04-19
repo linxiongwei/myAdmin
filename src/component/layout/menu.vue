@@ -6,24 +6,46 @@
 
 <script type="text/javascript">
 export default{
+	props:{
+		headerRoute:{
+			type:String
+		}
+	},
 	data(){
 		return {
 			activeClass:'curr',
+			allMenuData:{
+				"project":[
+					{"text":"项目列表1","url":"project"},
+					{"text":"项目列表2","url":"project2"},
+					{"text":"项目列表3","url":""}
+				],
+				"user":[
+					{"text":"用户列表1","url":"user"},
+					{"text":"用户列表2","url":""}
+				],
+				"activity":[
+					{"text":"活动列表1","url":"activity"}
+				]
+			},
 			navDate:[
-				{"text":"项目管理","url":""},
-				{"text":"用户管理","url":""},
-				{"text":"活动管理","url":""}
+				{"text":"项目列表1","url":"project"},
+					{"text":"项目列表2","url":"project2"},
+					{"text":"项目列表3","url":""}
 			]
 		}
 	},
 	computed:{
-		/*active(){
-			return this.$route.text
-		}*/
-		active:function(){
-			//console.log(this.$route)
+		active(){
+			//console.log(this.headerRoute);
+			this.navDate = this.allMenuData[this.headerRoute]
+			//console.log(this.$route.name)
 			return this.$route.name
 		}
+		/*active:function(){
+			//console.log(this.$route)
+			return this.$route.name
+		}*/
 	}
 }
 </script>

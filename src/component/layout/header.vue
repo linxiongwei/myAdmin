@@ -3,12 +3,15 @@
 		<img src="../../static/image/logo.png" class="fl">
 
 		<ul>
-			<li v-for="nav in navDate"><router-link :class="active == nav.url && activeClass" :to="{path:'/'+nav.url}">{{nav.text}}</router-link></li>
+			<li v-for="nav in navDate" @click="clickNav"><router-link :class="active == nav.url && activeClass" :to="{path:'/'+nav.url}">{{nav.text}}</router-link></li>
 		</ul>
 	</header>
 </template>
 
 <script type="text/javascript">
+/*const changeNav = function(){
+	alert(0)
+}*/
 export default{
 	data(){
 		return {
@@ -20,13 +23,24 @@ export default{
 			]
 		}
 	},
+	components:{},
 	computed:{
 		/*active(){
 			return this.$route.text
 		}*/
 		active:function(){
+			let name = this.$route.name
+			
 			//console.log(this.$route)
-			return this.$route.name
+			return name
+		}
+	},
+	methods:{
+		changeRoute:function(name){
+			this.$emit('changeNav',name)
+		},
+		clickNav:function(){
+			this.changeRoute(this.$route.name)
 		}
 	}
 }

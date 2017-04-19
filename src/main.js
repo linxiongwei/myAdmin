@@ -14,6 +14,8 @@ const projectContent = { template:'<h2>项目内容</h2>' }
 const userContent = { template:'<h2>用户内容</h2>' }
 const activityContent = { template:'<h2>活动内容</h2>' }
 import projectList from './component/page/projectList.vue'
+import projectList2 from './component/page/projectList2.vue'
+import userForm from './component/page/userForm.vue' 
 
 // 创建一个路由器实例
 // 并且配置路由规则
@@ -29,12 +31,17 @@ const router = new VueRouter({
 		{
 			path:'/user',
 			name:'user',
-			component:userContent
+			component:userForm
 		},
 		{
 			path:'/activity',
 			name:'activity',
 			component:activityContent
+		},
+		{
+			path:'/project2',
+			name:'project2',
+			component:projectList2
 		}
 	]
 })
