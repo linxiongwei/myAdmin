@@ -12,7 +12,7 @@ Vue.use(VueResource);
 //定义页面组件
 const projectContent = { template:'<h2>项目内容</h2>' }
 const userContent = { template:'<h2>用户内容</h2>' }
-const activityContent = { template:'<h2>活动11内容</h2>' }
+const activityContent = { template:'<h2>活动内容</h2>' }
 import projectList from './component/page/projectList.vue'
 import projectList2 from './component/page/projectList2.vue'
 import userForm from './component/page/userForm.vue'
