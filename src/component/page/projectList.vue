@@ -184,12 +184,12 @@ export default{
 		},
 		SecondSlider:{
 			template:'<div class="slider_cell2"><p v-for="list in slideCnt">{{list.title}}</p></div>',
-			data:function(){
+			data(){
 				return {
 					slideCnt:""
 				}
 			},
-			activated:function(){//当组件在 <keep-alive> 内被切换，它的 activated 和 deactivated 这两个生命周期钩子函数将会被对应执行。
+			activated(){//当组件在 <keep-alive> 内被切换，它的 activated 和 deactivated 这两个生命周期钩子函数将会被对应执行。
 				var self = this;
 				this.$http.jsonp("https://api.douban.com/v2/movie/top250?count=10",{},{
 					headers:{},
@@ -209,12 +209,12 @@ export default{
 		},
 		second:{
 			template:'<div class="slider_cell2"><p v-for="list in slideCnt">{{list.title}}</p></div>',
-			data:function(){
+			data(){
 				return {
 					slideCnt:""
 				}
 			},
-			activated:function(){//当组件在 <keep-alive> 内被切换，它的 activated 和 deactivated 这两个生命周期钩子函数将会被对应执行。
+			activated(){//当组件在 <keep-alive> 内被切换，它的 activated 和 deactivated 这两个生命周期钩子函数将会被对应执行。
 				var self = this;
 				this.$http.jsonp("https://api.douban.com/v2/movie/top250?count=10",{},{
 					headers:{},
@@ -231,22 +231,22 @@ export default{
 		}
 	},
 	methods:{
-		deleteData:function(index,oid){
-			console.log(this.$root)
-			console.log(this.$parent.$children.indexOf(this))
+		deleteData(index,oid){
+			//console.log(this.$root)
+			//console.log(this.$parent.$children.indexOf(this))
 			alert(this.$parent.author)
 			this.tableData.list.splice(index,1);
 		},
-		changeCurrent:function(n){
+		changeCurrent(n){
 			this.pageData.curr = n
 		},
-		toastText:function(){
+		toastText(){
 			alert(0)
 		},
-		showFun:function(){
+		showFun(){
 			this.show = !this.show
 		},
-		whickShow:function(){//切换
+		whickShow(){//切换
 			var arr = ['FirstSlider','SecondSlider','ThirdSlider']
 			var index = arr.indexOf(this.which_to_show)
 			if(index<2){
@@ -255,7 +255,7 @@ export default{
 				this.which_to_show = arr[0]
 			}
 		},
-		whickShow2:function(){//切换
+		whickShow2(){//切换
 			var arr = ['first','second','third']
 			var index = arr.indexOf(this.which_to_show2)
 			if(index<2){
@@ -264,7 +264,7 @@ export default{
 				this.which_to_show2 = arr[0]
 			}
 		},
-		filterClass:function(value){
+		filterClass(value){
 			if(value=="状态"){
 				return true;
 			}else{

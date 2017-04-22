@@ -24,8 +24,8 @@ export default{
 					{"text":"用户列表1","url":"user"},
 					{"text":"用户列表2","url":""}
 				],
-				"activity":[
-					{"text":"活动列表1","url":"activity"}
+				"statistics":[
+					{"text":"数据总览","url":"statistics"}
 				]
 			},
 			navDate:[

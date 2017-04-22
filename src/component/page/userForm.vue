@@ -52,6 +52,13 @@ $colorBlue:#6bb1ff;
 					<label>身份证：</label><input type="text" class="ipt_txt" v-model="userData.idcard" />
 				</li>
 				<li>
+					<label>身份证：</label><input type="file" @change="uploadImg"/>
+					<div>
+						<img v-if="!!userData.imgname" :src="userData.imgurl">
+						<p>{{userData.imgname}}</p>
+					</div>
+				</li>
+				<li>
 					<label>&nbsp;</label><input type="submit" class="ipt_btn" value="提交">
 				</li>
 			</ul>
@@ -66,8 +73,17 @@ export default{
 			userData:{
 				name:"王飞",
 				mobile:"15088559824",
-				idcard:"330382199407113326"
+				idcard:"330382199407113326",
+				imgurl:"",
+				imgname:""
 			}
+		}
+	},
+	methods:{
+		uploadImg(e){
+			let tag = e.target;
+			this.userData.imgurl = tag.value
+			this.userData.imgname = tag.files[0].name
 		}
 	}
 }

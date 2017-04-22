@@ -19,7 +19,7 @@ export default{
 			navDate:[
 				{"text":"项目管理","url":"project"},
 				{"text":"用户管理","url":"user"},
-				{"text":"活动管理","url":"activity"}
+				{"text":"数据管理","url":"statistics"}
 			]
 		}
 	},

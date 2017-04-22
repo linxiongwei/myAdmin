@@ -36,10 +36,10 @@ export default {
   },
   components:{ HeaderNavigation , LeftSidebar ,DialogWrap },
   methods:{
-    recieveData:function(name){
+    recieveData(name){
       this.headerRoute = name
     },
-    changeShow2:function(val){
+    changeShow2(val){
       this.show = val
     }
   }
